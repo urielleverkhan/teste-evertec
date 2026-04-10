@@ -1,0 +1,19 @@
+<section class="login">
+  <div class="login__main">
+    <div class="login__main-header">
+      <h4>Entre com seu usuário e senha</h4>
+    </div>
+    <div class="login__main-body">
+      <form formControlName="formulario" (submit)="logar()">
+        <input type="text" formControlName="nome" placeholder="Nome" />
+        <input type="text" formControlName="senha" placeholder="Senha" />
+        <button type="submit">Logar</button>
+      </form>
+    </div>
+    <div class="login__main-footer">
+      @if (estaAutenticado) {
+        <p>Usuário ou senha invalidos</p>
+      }
+    </div>
+  </div>
+</section>

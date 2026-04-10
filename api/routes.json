@@ -1,0 +1,5 @@
+{
+  "/mock/login": "/login",
+  "/mock/usuarios/listar": "/usuarios",
+  "/mock/usuario/Procurar?id=:id": "/usuarios/:id"
+}
