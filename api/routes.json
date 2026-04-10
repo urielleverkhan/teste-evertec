@@ -1,5 +1,5 @@
 {
   "/mock/login": "/login",
   "/mock/usuarios/listar": "/usuarios",
-  "/mock/usuario/Procurar?id=:id": "/usuarios/:id"
+  "/mock/usuario/procurar?id=:id": "/usuarios/:id"
 }

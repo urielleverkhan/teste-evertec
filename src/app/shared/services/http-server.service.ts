@@ -25,4 +25,20 @@ export class HttpServerService {
         }),
       );
   }
+
+  getUsuariosPorId(id: number) {
+    return this.httpClient
+      .get<Usuario>(this.urlBase + `usuario/procurar?id=${id}`)
+      .pipe(
+        tap({
+          next: (retorno: Usuario) => {
+            this.usuarios.set([retorno]);
+            console.log(this.usuarios());
+          },
+          error: (error) => {
+            throw new Error(error);
+          },
+        }),
+      );
+  }
 }

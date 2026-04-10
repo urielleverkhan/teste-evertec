@@ -7,10 +7,7 @@
       <form [formGroup]="formulario" (ngSubmit)="logar()">
         <input formControlName="nome" placeholder="Nome" />
         <input formControlName="senha" placeholder="Senha" />
-        <button pButton type="submit" [disabled]="!formulario.valid">
-          <i class="pi pi-check" pButtonIcon></i>
-          <span pButtonLabel>Logar</span>
-        </button>
+        <button type="submit" [disabled]="!formulario.valid">Logar</button>
       </form>
     </div>
     <div class="login__main-footer">

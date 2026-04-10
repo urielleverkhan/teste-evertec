@@ -1,5 +1,11 @@
 <main>
   <section class="usuarios">
+    <form [formGroup]="formulario" (ngSubmit)="procurar()">
+      <input formControlName="id" placeholder="Id do usuário" />
+      <button pButton type="submit" [disabled]="!formulario.valid">
+        Procurar
+      </button>
+    </form>
     <div class="usuarios__main">
       @if (usuarios$ | async) {
         @for (usuario of usuarios(); track usuario.id) {
