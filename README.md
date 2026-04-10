@@ -15,33 +15,33 @@ Instale todas as dependências do projeto através do npm:
 ```bash
 npm install
 
- 2. Execução (Aplicação + API Mock)
+### 2. Execução (Aplicação + API Mock)
 Para o funcionamento pleno das funcionalidades, o projeto utiliza um servidor de mock. O comando abaixo inicia simultaneamente a aplicação Angular e o http-server (que simula a API com 3 endpoints):
 
 Bash
 npm run start:mock
 
-3. Testes Unitários
+### 3. Testes Unitários
 A suíte de testes foi implementada utilizando Jest. Para validar os componentes e serviços, execute:
 
 Bash
 npm run test
 
-🔐 Guia de Acesso
+## 🔐 Guia de Acesso
 Para validar o fluxo de autenticação da aplicação, utilize as seguintes credenciais:
 
 Usuário: Naira
 
 Senha: Campo livre (não validado de forma restrita nesta versão, aceitando qualquer valor).
 
-💾 Persistência da Sessão
+## 💾 Persistência da Sessão
 A aplicação gerencia a sessão do usuário através da SessionStorage API:
 
 Comportamento: Uma vez realizado o login, os dados são persistidos na sessão atual do navegador. O acesso não será solicitado novamente ao atualizar a página.
 
 Reset de Fluxo: Para forçar o retorno à tela de login e testar o fluxo do zero, limpe o Application Storage do navegador ou encerre a aba/sessão atual.
 
-🏗️ Stack Técnica
+## 🏗️ Stack Técnica
 Framework: Angular 19 (Standalone Components)
 
 Test Runner: Jest
