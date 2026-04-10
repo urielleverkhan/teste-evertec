@@ -1,13 +1,54 @@
-# TesteEvertec
+# TesteEvertec 🚀
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.20.
+Este projeto foi desenvolvido como parte de um teste técnico, utilizando o [Angular CLI](https://github.com/angular/angular-cli) na versão 19.2.20. A aplicação foca em boas práticas de componentização e testes unitários.
 
-## Development serve
+---
 
-Para configurar e executar o projeto, siga os passos abaixo:
+## 🛠️ Configuração e Execução
 
-Instalação: Execute npm install para instalar as dependências.
+Siga os passos abaixo para preparar o ambiente e rodar a aplicação localmente:
 
-Execução: Utilize o comando npm run start:mock. Este comando iniciará simultaneamente a aplicação Angular e o http-server, que simula a API com 3 endpoints.
+### 1. Instalação
 
-Testes: A suíte de testes utiliza Jest. Para executá-los, utilize o comando npm run test.
+Instale todas as dependências do projeto através do npm:
+
+```bash
+npm install
+
+ 2. Execução (Aplicação + API Mock)
+Para o funcionamento pleno das funcionalidades, o projeto utiliza um servidor de mock. O comando abaixo inicia simultaneamente a aplicação Angular e o http-server (que simula a API com 3 endpoints):
+
+Bash
+npm run start:mock
+
+3. Testes Unitários
+A suíte de testes foi implementada utilizando Jest. Para validar os componentes e serviços, execute:
+
+Bash
+npm run test
+
+🔐 Guia de Acesso
+Para validar o fluxo de autenticação da aplicação, utilize as seguintes credenciais:
+
+Usuário: Naira
+
+Senha: Campo livre (não validado de forma restrita nesta versão, aceitando qualquer valor).
+
+💾 Persistência da Sessão
+A aplicação gerencia a sessão do usuário através da SessionStorage API:
+
+Comportamento: Uma vez realizado o login, os dados são persistidos na sessão atual do navegador. O acesso não será solicitado novamente ao atualizar a página.
+
+Reset de Fluxo: Para forçar o retorno à tela de login e testar o fluxo do zero, limpe o Application Storage do navegador ou encerre a aba/sessão atual.
+
+🏗️ Stack Técnica
+Framework: Angular 19 (Standalone Components)
+
+Test Runner: Jest
+
+Linguagem: TypeScript
+
+Mock Server: http-server (JSON Mocking)
+
+Criado por Naira Danile Magalhães
+```
