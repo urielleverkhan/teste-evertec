@@ -1,14 +1,16 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthServerService } from '../shared/services/auth-server.service';
+import { AuthServiceService } from '../shared/services/auth-server.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  const authServer = inject(AuthServerService);
+  const authService = inject(AuthServiceService);
   const router = inject(Router);
-  alert(authServer.token());
-  if (authServer.token()) {
+  console.log('auth');
+  if (authService.token() || sessionStorage.getItem('token')) {
+    console.log('logado');
     return true;
   } else {
+    console.log('desgolado');
     return router.parseUrl('/login');
   }
 };

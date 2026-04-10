@@ -1,1 +1,6 @@
-<p>card-users works!</p>
+@if (usuario) {
+  <section class="card-usuario">
+    <p>Nome: {{ usuario.nome }}</p>
+    <p>Idade: {{ usuario.idade }}</p>
+  </section>
+}

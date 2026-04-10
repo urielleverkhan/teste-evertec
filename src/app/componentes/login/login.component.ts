@@ -1,17 +1,18 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthServerService } from '../../shared/services/auth-server.service';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthServiceService } from '../../shared/services/auth-server.service';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [ReactiveFormsModule],
+  standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   private fb = inject(FormBuilder);
-  private authService = inject(AuthServerService);
-  estaAutenticado = false;
+  private authService = inject(AuthServiceService);
+  eInvalido = false;
 
   formulario = this.fb.group({
     nome: ['', Validators.required],
@@ -23,10 +24,10 @@ export class LoginComponent {
       .logar(this.formulario.value.nome!, this.formulario.value.senha!)
       .subscribe({
         next: () => {
-          this.estaAutenticado = false;
+          this.eInvalido = false;
         },
-        error: (erro) => {
-          this.estaAutenticado = true;
+        error: () => {
+          this.eInvalido = true;
         },
       });
   }

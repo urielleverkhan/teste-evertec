@@ -1,1 +1,11 @@
-<p>home works!</p>
+<main>
+  <section class="usuarios">
+    <div class="usuarios__main">
+      @if (usuarios$ | async) {
+        @for (usuario of usuarios(); track usuario.id) {
+          <app-card-users [usuario]="usuario"></app-card-users>
+        }
+      }
+    </div>
+  </section>
+</main>
